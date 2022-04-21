@@ -29,3 +29,6 @@ gsutil -m cp -r \
   
 # or else
 gsutil cp <where_to_copy_data_from>/<file_name> <where_to_topy_data_to> 
+
+# Note - in the downloads if the files are being downloaded as .gstmp instead of .bam or .cram, that means the files are corrupted when there is download.
+# This is either due to improper installation of Google SDK cloud or gsutility and python not having the same version. 
