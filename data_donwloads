@@ -1,0 +1,31 @@
+## installing GS utility
+curl https://sdk.cloud.google.com | bash
+
+## Open a new bash shell in your terminal, or restart shell
+exec -l $SHELL
+
+## Note- the following points are important for proper installation
+## Make sure that gsutility and python have the same version. 
+## Check this by gsutil version -l and see if compiled crcmod is true/false [it should be true for the download to work]. I used miniconda for my donwload
+## Once this is set, download the desired file or folder from terra using their instructions. In the following I have breifly described the steps.
+
+
+## Initialize GS utility from Google SDK
+gcloud init
+
+## choose the steps and answers appropriately, i am using my Broad email ID for authentication
+# check your project listings with the following and this will set configurations of Google Cloud SDK to use
+
+gsutil ls
+
+# download or copy files from Terra to cluster
+
+# Go to bucket details of the Terra data and click on for download. Either copy the clipboard and directly download it to cwd.
+# example below is a download of WGS data Viswanathan_WGS_30X_Feb2022 to my cwd directly using gsutility command
+
+gsutil -m cp -r \
+  "gs://fc-0de21897-9869-4361-9db7-49b27efeba35/Viswanathan_WGS_30X_Feb2022" \
+  .
+  
+# or else
+gsutil cp <where_to_copy_data_from>/<file_name> <where_to_topy_data_to> 
