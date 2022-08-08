@@ -1,0 +1,16 @@
+## Initialize GS utility from Google SDK
+gcloud init
+
+## check your project listings with the following 
+
+gsutil ls
+
+# download or copy files from Terra to cluster
+# example below is a download of WGS data Viswanathan_WGS_30X_Feb2022 to my cwd directly using gsutility command
+
+gsutil -m cp -r \
+  "gs://fc-0de21897-9869-4361-9db7-49b27efeba35/Viswanathan_WGS_30X_Feb2022" \
+  .
+  
+# or else
+gsutil cp <where_to_copy_data_from>/<file_name> <where_to_topy_data_to> 
